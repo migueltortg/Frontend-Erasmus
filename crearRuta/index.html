@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Ruta </title>
+    <!-- Cargo CSS jquery-UI -->
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <link rel="stylesheet" href="css\jquery-ui.structure.css">
+    <link rel="stylesheet" href="css/jquery-ui.theme.css">
+    <link rel="stylesheet" href="css/richtext.min.css">
+    <link rel="stylesheet" href="css/image-uploader.min.css">
+
+
+    <!-- Cargo jquery y jquery-UI-->
+    <script src="js/jquery-3.7.1.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js\jquery-ui.min.js"></script>
+    <script src="js/jquery.richtext.min.js"></script>
+    <script src="js/image-uploader.min.js"></script>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+    <script src="https://kit.fontawesome.com/91464fdedc.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="css/estilo.css">
+    <script src="js/crearRuta.js"></script>
+</head>
+<body>
+    <div id="modal">
+        <div id="main">
+            <h1>Crear Ruta</h1>
+                <div id="tabs">
+                    <ul>
+                    <li id="tab-1-li"><a href="#tabs-1">Información</a></li>
+                    <li id="tab-2-li"><a href="#tabs-2">Visitas</a></li>
+                    <li id="tab-3-li"><a href="#tabs-3">Programación</a></li>
+                    </ul>
+                    <div id="tabs-1">
+                        <label for="titulo">Titulo:</label>
+                        <input type="text" name="titulo" id="inputTitulo"><br>
+                        <label for="descripcion">Descripción:</label>
+                        <textarea name="descripcion" id="textarea" cols="1" rows="1"></textarea>
+                        <label for="subirImagen">Subir Imagen:</label>
+                        <div id="input-images"></div>
+                        <label for="puntoEncuentro">Punto de encuentro:</label><br>
+                        <label for="x">Punto X:</label>
+                        <input type="number" name="x" id="x">
+                        <label for="y">Punto Y:</label>
+                        <input type="number" name="y" id="y">
+                        <button id="btnMapa">Mapa</button><br>
+                        <label for="aforo">Fecha Inicio:</label>
+                        <input type="datetime" id="fechaInicio"><br>
+                        <label for="aforo">Fecha Fin:</label>
+                        <input type="datetime" id="fechaFin"><br>
+                        <label for="aforo">Aforo:</label>
+                        <input type="number" id="aforo">
+                    </div>
+                    <div id="tabs-2">
+                        <div>
+                            <label for="filtroLocalidad">Localidad:</label>
+                            <select name="filtroLocalidad" id="selectLocalidad">
+                                <option value="Madrid">Madrid</option>
+                                <option value="Jaén">Jaén</option>
+                                <option value="Málaga">Málaga</option>
+                            </select>
+                        </div>
+                        <div style="border:4px solid red;">
+                            <ul id="visitasDisponibles">
+                                <li style="border: 2px solid black;" class="visitaItem">
+                                    <img src="css/images/88f55ef3-4bad-4e39-84a3-a7fec77d2831.png" width="80px" height="80px" alt="Catedral de Jáen">
+                                    <h2>Catedral de Jaén</h2>
+                                </li>
+                                <li style="border: 5px solid black;" class="visitaItem">
+                                    <img src="css/images/05c1f20c-049b-4756-8c19-1dd147641cea.png" width="80px" height="80px" alt="Catedral de Jáen">
+                                    <h2>Baños Arabes</h2>
+                                </li>
+                                <li style="border: 5px solid black;" class="visitaItem">
+                                    <img src="css/images/6f3cad02-8465-4b99-91a4-89b4da0b385b.png" width="80px" height="80px" alt="Catedral de Jáen">
+                                    <h2>Castillo</h2>
+                                </li>
+                            </ul>
+                        </div>
+                        <div style="border:4px solid red;">
+                            <ul id="visitasAsignadas">
+                                <li style="border: 5px solid black;" class="visitaItem">
+                                    <img src="css/images/6f3cad02-8465-4b99-91a4-89b4da0b385b.png" width="80px" height="80px" alt="Catedral de Jáen">
+                                    <h2>Castillo</h2>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div id="tabs-3">
+                        <div>
+                            <label for="fechaInicioPr">Fecha inicio</label>
+                  
+                            <input type="text" class="datepicker" id="fechaInicioPr"><br>
+                            <label for="fechaFinPr">Fecha fin</label>
+                            <input type="text" class="datepicker" id="fechaFinPr"><br>
+                          </div>
+                  
+                          <div id="diasSemana">
+                            <input type="checkbox" id="lunes" name="dia" value="L">
+                            <label for="lunes">Lunes</label>
+                            <input type="checkbox" id="martes" name="dia" value="M">
+                            <label for="martes">Martes</label>
+                            <input type="checkbox" id="miercoles" name="dia" value="X">
+                            <label for="miercoles">Miércoles</label>
+                            <input type="checkbox" id="jueves" name="dia" value="J">
+                            <label for="jueves">Jueves</label>
+                            <input type="checkbox" id="viernes" name="dia" value="V">
+                            <label for="viernes">Viernes</label>
+                            <input type="checkbox" id="sabado" name="dia" value="S">
+                            <label for="sabado">Sábado</label>
+                            <input type="checkbox" id="domingo" name="dia" value="D">
+                            <label for="domingo">Domingo</label>
+                          </div>
+                  
+                          <div id="formulario">
+                            <label for="hora">Hora:</label>
+                            <input type="time" id="hora" name="hora">
+                            <label for="personas">Guia</label>
+                  
+                            <select id="personas" name="personas">
+                              <option value="MAnolos">MAnolos</option>
+                              <option value="Diego">Diego</option>
+                              <option value="TuPae">TuPae</option>
+                            </select>
+                          </div>
+                          <button id="btnAñadir">Añadir</button>
+                  
+                          <div id="tabla">
+                            <table id="horarios">
+                              <thead>
+                                <tr>
+                                  <th>Rango de Fecha</th>
+                                  <th>Días</th>
+                                  <th>Hora</th>
+                                  <th>Persona</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                              </tbody>
+                            </table>
+                          </div>
+                    </div>
+                </div>
+                
+        </div>
+    </div>
+</body>
+</html>

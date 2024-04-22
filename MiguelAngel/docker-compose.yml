@@ -1,0 +1,22 @@
+version: "3"
+services:
+  cliente:
+    build: ./cliente
+    container_name: cliente
+    ports: 
+      - 8081:80
+    volumes:
+      - "./cliente:/var/www/html"
+  correo:
+    build: ./correo
+    container_name: correo
+    volumes:
+      - "./correo:/var/www/html"
+  cestero:
+    build: ./cestero
+    container_name: cestero
+    volumes:
+      - "./cestero:/var/www/html"
+  datos:
+    build: ./datos
+    container_name: datos

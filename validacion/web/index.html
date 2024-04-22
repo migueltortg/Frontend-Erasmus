@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Inicio de Sesion</title>
+    <link rel="stylesheet" href="css/login.css">
+    <style>
+        .valido{
+            border: 1px solid green;
+        }
+        .invalido{
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <script src="logica.js"></script>
+    <script src="validaciones.js"></script>
+
+    <div id="container">
+        <form action="" method="post">        
+            <h1>Inicio de Sesión</h1>
+            <div>
+                <label for="inputDNI"><h3>DNI</h3></label>
+                <input type="text" name="dni" id="inputDNI" data-valida="dni">
+            </div>
+            <div>
+                <label for="inputContraseña"><h3>Contraseña</h3></label>
+                <input type="password" name="contraseña" id="inputContraseña" data-valida="relleno">
+            </div>
+            <input type="submit" value="Acceder" name="iniciarSesion" id="inputSubmit">
+            <a href="?vista=registro">Registrate</a>
+        </form>
+    </div>
+</body>
+</html>

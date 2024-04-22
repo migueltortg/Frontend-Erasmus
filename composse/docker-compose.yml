@@ -1,0 +1,28 @@
+version: "3"
+services:
+  lector:
+    build: ./lector
+    container_name: lector
+    ports: 
+      - 8080:80
+    volumes:
+      - "./lector:/var/www/html"
+    depends_on: 
+      - bd 
+  escritor:
+    build: ./escritor
+    container_name: escritor
+    ports: 
+      - 8081:80
+    volumes:
+      - "./escritor:/var/www/html"
+    depends_on: 
+      - bd 
+  bd:
+    build: ./datos
+    ports: 
+      - 3306:3306
+    volumes:
+      - "./datos:/var/lib/mysql"
+    environment:
+      MYSQL_ROOT_PASSWORD: root

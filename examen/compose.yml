@@ -1,0 +1,28 @@
+version: "3"
+services:
+  cliente:
+    build: ./cliente
+    container_name: cliente
+    ports:
+      - 8080:80
+    volumes:
+      - ./cliente:/var/www/html/
+    depends_on:
+      - datos
+
+  cartero:
+    build: ./cartero
+    container_name: cartero
+    volumes:
+      - ./cartero:/var/www/html/
+    depends_on:
+      - datos
+
+  datos:
+    build: ./datos
+    
+  pdf:
+    build: ./pdf
+    container_name: pdf
+    volumes:
+      - ./pdf:/var/www/html/

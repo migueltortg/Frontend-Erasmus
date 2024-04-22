@@ -1,0 +1,11 @@
+version: '3.0' # Versión de docker-compose, depende de Docker
+services:
+  correoapi:
+    build: ./correoapi
+    
+  cliente:
+    build: ./cliente
+    ports:
+      - 8081:80
+    
+    

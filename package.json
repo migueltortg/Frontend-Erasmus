@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "@deltablot/malle": "^2.5.2",
+    "blueimp-file-upload": "^10.32.0",
+    "chart.js": "^4.4.1"
+  }
+}

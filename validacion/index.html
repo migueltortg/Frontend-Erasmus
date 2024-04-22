@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="validaciones.js"></script>
+    <script src="logica.js"></script>
+    <style>
+        .valido{
+            border: 1px solid green;
+        }
+        .invalido{
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <form action="almacenar.php">
+        <label>Nombre</label><input type="text" name="nombre" data-valida="relleno"><br/>
+        <label>Apodo</label><input type="text" name="aposo"><br/>
+        <label>Apellidos</label><input type="text" name="apellidos" data-valida="relleno"><br/>
+        <label>Edad</label><input type="text" name="edad" data-valida="edad"><br/>
+        <label>DNI</label><input type="text" name="dni" data-valida="dni"><br/>
+        <label>Sexo</label><input type="radio" name="sexo" value="H" data-valida="seleccionado">Hombre <input type="radio" name="sexo" value="M" data-valida="seleccionado">Mujer 
+        <label>Estudios</label>
+            <select name="estudios" data-valida="select">
+                <option value="-1">Seleccione sus estudios</option>
+                <option value="ESO">ESO</option>
+                <option value="FP">FP</option>
+                <option value="BACH">BACHILLERATO</option>
+            </select>
+        <input type="submit" id="enviar">
+    </form>
+</body>
+</html>

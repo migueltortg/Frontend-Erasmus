@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Proyecto Formulario</title>
+        <link rel="stylesheet" type="text/css" href="index.css">
+        <script type="text/javascript" src="index.js" charset="utf-8" defer></script>
+        <script type="text/javascript" src="eventListeners.js" charset="utf-8" defer></script>
+        <script type="text/javascript" src="validar.js" charset="utf-8"></script>
+        <script type="text/javascript" src="xml.js" charset="utf-8"></script>
+    </head>
+    <body>
+        <div id="cabezera">
+            <div id="1img" class="imgApagado"></div>
+            <div id="2img" class="imgApagado"></div>
+            <div id="3img" class="imgApagado"></div>
+            <p>Identificacion</p>
+            <p>Domicilio</p>
+            <p>Otros</p>
+            <label for="enviado" id="enviado">FORMULARIO ENVIADO CORRECTAMENTE!!!</label>
+        </div>
+        
+        <form name="formulario" id="formulario" accept-charset="utf-8" autocomplete="off"
+        enctype="multipart/form-data" method="post" formtarget="_blank" formnovalidate="formnovalidate">
+            <div id="Identificacion">
+                <label for="nombre">Nombre</label>
+                <input id="nombre" name="nombre" type="text" autofocus>
+                <label for="nombre" class="errorMsg" id="nombreError">Debes insertar un nombre!!</label>
+                <label for="contrasena">Constraseña</label>
+                <input id="contrasena" name="contrasena" type="password">
+                <label for="contrasena" class="errorMsg" id="passwordError">La contraseña debe tener 8 caracteres,un número y al menos una letra en mayúsculas.</label>
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email">
+                <label for="email" class="errorMsg" id="emailError">Debes introducir un correo válido!!</label>
+                
+                <button type="button" id="IdentiSiguiente">Siguiente</button>
+            </div>    
+            
+            <div id="Domicilio">
+                <label >Dirección:</label>
+                <input type="text" id="direccion" name="direccion" autofocus>
+    
+                <label for="provincia" class="provincia">Provincia:</label>
+                <select name="provincia" id="slctProvincia">
+                </select>
+    
+                <label for="localidad" id="lblLocalidad" class="localidad">Localidad:</label>
+                <select name="localidad" id="slctLocalidad" >
+                    
+                </select>
+    
+                <button type="button" id="DomicilioAnterior">Anterior</button>
+                <button type="button" id="DomicilioSiguiente">Siguiente</button>
+            </div>
+
+            <div id="Otros">
+                <label for="fecha_nacimiento">Fecha Nacimiento:</label>
+                <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" autofocus>
+
+                <label for="dni">DNI:</label>
+                <input type="text" id="dni" name="dni" autofocus maxlength="9" minlength="9">
+                <label for="fecha_nacimiento" class="errorMsg" id="calendarError">Debes tener mas de 14 anos</label>
+                <label for="dni" class="errorMsg" id="dniError">Debes introducir un DNI válido!!</label>
+
+                <label for="telefono">Telefono:</label>
+                <input type="text" id="telefono" name="telefono" maxlength="9" minlength="9">
+
+                <label for="sexo">Sexo:</label>
+                <div>
+                    <input type="radio" name="sexo">
+                    <label for="masculino" id="masculino">M</label>
+                    <input type="radio" name="sexo">
+                    <label for="femenino" id="femenino">F</label>
+                </div>
+    
+                <label for="telefono" class="errorMsg" id="tfnoError">Debes introducir un Telefono válido!!</label>
+
+                <label for="intereses" id="intereses">Intereses:</label>
+                <div id="opcIntereses">
+                    <label><input type="checkbox" id="cine">Cine</label>
+                    <label><input type="checkbox" id="musica">Musica</label>
+                    <label><input type="checkbox" id="lectura">Lectura</label>
+                </div>
+                <button type="button" id="OtrosAnterior">Anterior</button>
+                <button type="button" id="enviar">Enviar</button>
+            </div>
+        </form>
+    </body>
+</html>
